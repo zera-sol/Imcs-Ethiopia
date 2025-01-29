@@ -1,0 +1,12 @@
+.history-title{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--blueimcs);
+}
+.history-list-icon{
+    color: var(--yellowimcs);
+}
+.history-list-description{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

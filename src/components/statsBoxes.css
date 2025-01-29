@@ -1,0 +1,19 @@
+.stats-container {
+    padding: 2rem;
+    background-color: #f9fafb; /* Light background */
+  }
+  
+  .stat-box {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .stat-box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

@@ -1,0 +1,33 @@
+.navbar-logo{
+    margin-left: 80px;
+    width: 100px;
+}
+.navbar-logo img{
+    max-width:100px;
+}
+.list-container ul {
+    margin-right: 65px;
+}
+.list-container ul li{
+    margin-left: 40px;
+}
+.list-container ul li a{
+    font-weight: bold;
+    font-size: 1.4rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.list-container ul li a:hover{
+    color: var(--blueimcs);
+}
+
+/* Screen width between 600px and 900px */
+@media (max-width: 600px){
+    .navbar-logo{
+        margin-left: 10px;
+        width: 50px;
+    }
+    .navbar-logo img{
+        max-width:50px;
+    }
+  }
+  
