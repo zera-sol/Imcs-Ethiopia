@@ -7,6 +7,9 @@ import History from "../components/History";
 import Annual from "../components/Annual";
 import Leadership from "../components/Leadership";
 import RecentBlog from "../components/RecentBlog";
+import PopeLetter from "../components/PopeLetter";
+import TestimonySection from "../components/TestimonySection";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -19,6 +22,9 @@ function Home() {
       <Annual />
       <Leadership />
       <RecentBlog />
+      <PopeLetter />
+      <TestimonySection />
+      <Footer />
       {/* Other components */}
     </div>
   );
