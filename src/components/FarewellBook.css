@@ -1,0 +1,29 @@
+.farewell-title{
+    color: white;
+    text-align: center;
+    font-family: "Smooch Sans", serif;
+    font-weight: bold;
+    margin: 50px;
+    font-size: 2rem;
+    margin-top: 0;
+}
+.farewell-title-h2{
+    color: white;
+    font-family: "Smooch Sans", serif;
+    font-weight: bold;
+    margin: 50px;
+    font-size: 2rem;
+    margin-top: 0;
+}
+.farewell-student-name{
+    font-family:"Exo 2", serif; 
+}
+/* Screen width between 600px and 900px */
+@media (max-width: 600px){
+    .farewell-title-h2{
+        margin: 50px;
+        font-size: 1rem;
+        align-items: center;
+    }
+  }
+  

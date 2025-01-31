@@ -12,6 +12,13 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-lg">
+      <div className="w-full bg-[#3992CE] text-white flex justify-between items-center p-4">
+            <p></p>
+            <p className="flex space-x-4">
+                <a href="/terms-conditions" className="text-white no-underline hover:underline">Terms & Conditions</a>
+                <a href="/terms-conditions" className="text-white no-underline hover:underline">Privacy Policy</a>
+            </p>
+     </div>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4 list-container">
           {/* Logo */}

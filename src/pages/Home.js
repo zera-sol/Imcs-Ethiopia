@@ -14,7 +14,6 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <div>
-      <Navbar />
       <HeroSection />
       <AboutUs />
       <StatsBoxes />
@@ -24,7 +23,6 @@ function Home() {
       <RecentBlog />
       <PopeLetter />
       <TestimonySection />
-      <Footer />
       {/* Other components */}
     </div>
   );
