@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage';
 import FarewellBookPage from './pages/FarewellBookPage';
 import BlogPage from './pages/BlogPage';
 import TermsCondition from './pages/TermsCondition';
+import EditBlog from './components/EditBlog';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/farewell-book" element={<FarewellBookPage />} />
           <Route path="/blog" element={<BlogPage />} />
-          <Route path="/terms-conditions" element={<TermsCondition />} />          
+          <Route path="/terms-conditions" element={<TermsCondition />} /> 
+          <Route path="/edit" element={<EditBlog />} />         
         </Routes>
         <Footer />  {/* Footer will be displayed on all pages */}
       </Router>
