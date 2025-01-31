@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import './navbar.css'
 
 // Mock Data (replace with data fetched from backend later)
 const recentBlogs = [
@@ -40,7 +41,7 @@ const RecentBlog = () => {
   }, [inView]);
 
   return (
-    <div ref={ref} className="min-h-screen bg-[#3992CE] py-16 px-6 md:px-20">
+    <div ref={ref} className="min-h-screen bg-[#3992CE] py-16 px-6 md:px-20 blog-container-comp">
       {/* Title Section */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}

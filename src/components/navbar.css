@@ -29,5 +29,8 @@
     .navbar-logo img{
         max-width:50px;
     }
+    .blog-container-comp{
+        margin-top: -180px;
+    }
   }
   
