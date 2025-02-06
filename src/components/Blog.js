@@ -42,7 +42,7 @@ const blogsData = [
 const Blog = () => {
   const [blogs, setBlogs] = useState(blogsData);
   const navigate = useNavigate();
-  const session = false;
+  const user = localStorage.getItem("user");
 
   const handleEdit = (blog) => {
     navigate("/edit", { state: { blog } }); // Navigate to the edit page with blog data
@@ -73,7 +73,7 @@ const Blog = () => {
               />
               <div className="absolute top-2 right-2 flex space-x-2">
                 {/* edit button */}
-                { session &&
+                { user &&
                     <button
                     onClick={() => handleEdit(blog)}
                     className="p-2 bg-white rounded-full shadow-md hover:bg-gray-100"
@@ -81,7 +81,7 @@ const Blog = () => {
                     <FaEdit className="h-5 w-5 text-gray-600" />
                     </button>}
                 {/* Delete Icon */}
-                    { session &&
+                    { user &&
                     <button
                     onClick={() => handleDelete(blog.id)}
                     className="p-2 bg-white rounded-full shadow-md hover:bg-gray-100"

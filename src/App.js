@@ -9,6 +9,7 @@ import FarewellBookPage from './pages/FarewellBookPage';
 import BlogPage from './pages/BlogPage';
 import TermsCondition from './pages/TermsCondition';
 import EditBlog from './components/EditBlog';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Route path="/farewell-book" element={<FarewellBookPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/terms-conditions" element={<TermsCondition />} /> 
-          <Route path="/edit" element={<EditBlog />} />         
+          <Route path="/edit" element={<EditBlog />} />      
+          <Route path="/login" element={<Login />}  />   
         </Routes>
         <Footer />  {/* Footer will be displayed on all pages */}
       </Router>
