@@ -33,3 +33,7 @@
   border-bottom-right-radius: 10px;
   color: aquamarine;
 }
+.text-container-recent-blog{
+  height: 300px;
+  overflow: scroll;
+}
