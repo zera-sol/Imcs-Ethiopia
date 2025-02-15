@@ -15,7 +15,7 @@ const EditBlog = () => {
   const handleSave = () => {
     // Save logic here (e.g., update the blog in the state or send to an API)
     alert("Blog updated successfully!");
-    navigate("/blog"); // Navigate back to the blog page
+    navigate("/news"); // Navigate back to the blog page
   };
 
   return (

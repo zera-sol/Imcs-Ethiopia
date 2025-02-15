@@ -1,3 +1,3 @@
 // the api to send request
-const api = "http://localhost:5000/api";
+const api = "https://imcs-ethiopia-backend.onrender.com/api";
 export default api;

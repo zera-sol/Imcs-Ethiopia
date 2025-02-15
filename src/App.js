@@ -10,6 +10,7 @@ import BlogPage from './pages/BlogPage';
 import TermsCondition from './pages/TermsCondition';
 import EditBlog from './components/EditBlog';
 import Login from './components/Login';
+import AddNews from './components/createNews'
 
 function App() {
   return (
@@ -21,10 +22,11 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/farewell-book" element={<FarewellBookPage />} />
-          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/news" element={<BlogPage />} />
           <Route path="/terms-conditions" element={<TermsCondition />} /> 
-          <Route path="/edit" element={<EditBlog />} />      
+          <Route path="/edit-news/:id" element={<EditBlog />} />      
           <Route path="/login" element={<Login />}  />   
+          <Route path="/add-news" element={<AddNews />} />
         </Routes>
         <Footer />  {/* Footer will be displayed on all pages */}
       </Router>

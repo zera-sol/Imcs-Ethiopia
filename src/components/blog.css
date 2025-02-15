@@ -22,3 +22,14 @@
     font-weight: bold;
     font-size: 2rem;
 }
+.create-news{
+  color: white;
+  padding: 5px;
+  transition: .5s;
+}
+.create-news:hover{
+  border: 1px solid white;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: aquamarine;
+}
