@@ -5,7 +5,7 @@
 .adminGraduate-container textarea{
     border-bottom: 2px solid var(--blueimcs);
     color: var(--blueimcs);
-    font-size: 1.2rem;
+    font-size: 1.05rem;
 }
 .adminGraduate-container input:focus, 
 .adminGraduate-container textarea:focus {
@@ -22,4 +22,39 @@
 }
 .adminGraduate-container .university{
     border: 1px dashed var(--blueimcs);
+}
+/* adminGraduateForm.css */
+
+/* Default styling for larger screens (assuming your design works well on larger screens) */
+.graduate-input-university,
+.cridential-field input,
+.cridential-field textarea,
+button {
+  width: auto;
+}
+
+button {
+  width: auto;
+}
+
+/* Responsive styling for mobile views */
+@media (max-width: 768px) {
+  .graduate-input-university,
+  .cridential-field input,
+  .cridential-field textarea,
+  button {
+    width: 100% !important; /* Ensures full width on small screens */
+    margin: 0 0 10px 0; /* Adds some space between inputs and buttons */
+  }
+  /* Adjust the button to be full width on small screens */
+  .adminGraduate-container .mt-4 {
+    width: 100% !important;
+  }
+  .adminGraduate-container .mx-20{
+    margin: 0;
+  }
+  .cridential-field{
+    flex-direction: column;
+    gap: 5px;
+  }
 }
