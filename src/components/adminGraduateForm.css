@@ -1,0 +1,25 @@
+.graduates-body{
+    background-color: var(--blueimcs);
+}
+.adminGraduate-container input,
+.adminGraduate-container textarea{
+    border-bottom: 2px solid var(--blueimcs);
+    color: var(--blueimcs);
+    font-size: 1.2rem;
+}
+.adminGraduate-container input:focus, 
+.adminGraduate-container textarea:focus {
+    outline: none;
+    border: none;
+  }
+.graduate-input-university{
+    width: 50%;
+}
+.cridential-field{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+.adminGraduate-container .university{
+    border: 1px dashed var(--blueimcs);
+}

@@ -11,6 +11,7 @@ import TermsCondition from './pages/TermsCondition';
 import EditBlog from './components/EditBlog';
 import Login from './components/Login';
 import AddNews from './components/createNews'
+import AddGraduates from ".//pages/AddGraduates"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/edit-news/:id" element={<EditBlog />} />      
           <Route path="/login" element={<Login />}  />   
           <Route path="/add-news" element={<AddNews />} />
+          <Route path="/add-graduates" element={<AddGraduates />} />
         </Routes>
         <Footer />  {/* Footer will be displayed on all pages */}
       </Router>
