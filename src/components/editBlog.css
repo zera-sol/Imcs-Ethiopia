@@ -1,28 +1,11 @@
-.edit-container{
-    background-color: var(--blueimcs);
-}
-.edit-container h1{
-    color: white;
-    text-align: center;
-    font-family: "Smooch Sans", serif;
-    font-weight: bold;
-    margin: 15px;
-    font-size: 2rem;
-}
-.edit-container label{
+label{
+    padding: 10px 20px;
     color: var(--blueimcs);
-    font-family: "Smooch Sans", serif;
     font-weight: bold;
-    font-size: 2rem;
+    text-transform: capitalize;
+    font-family:"Smooch Sans", serif;
+    font-size: 1.5rem;
 }
-.edit-container input, 
-.edit-container textarea,
-.edit-container input:active,
-.edit-container textarea:active
-.edit-container input:focus,
-.edit-container textarea:focus{
-    border: 2px solid var(--blueimcs);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+label.text-white{
+    color:white;
 }
-
