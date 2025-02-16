@@ -1,5 +1,6 @@
-.farewell-title{
-    color: white;
+/* Updated CSS with RGB colors */
+.farewell-title {
+    color: rgb(255, 255, 255); /* White */
     text-align: center;
     font-family: "Smooch Sans", serif;
     font-weight: bold;
@@ -7,23 +8,37 @@
     font-size: 2rem;
     margin-top: 0;
 }
-.farewell-title-h2{
-    color: white;
+
+.farewell-title-h2 {
+    color: rgb(255, 255, 255); /* White */
     font-family: "Smooch Sans", serif;
     font-weight: bold;
     margin: 50px;
     font-size: 2rem;
     margin-top: 0;
 }
-.farewell-student-name{
-    font-family:"Exo 2", serif; 
+
+.farewell-student-name {
+    font-family: "Exo 2", serif; 
 }
+
+.farewell-title-p {
+    color: rgb(255, 255, 255); /* White */
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: cursive;
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Screen width between 600px and 900px */
-@media (max-width: 600px){
-    .farewell-title-h2{
+@media (max-width: 600px) {
+    .farewell-title-h2 {
         margin: 50px;
         font-size: 1rem;
-        align-items: center;
+        text-align: center;
     }
-  }
-  
+}

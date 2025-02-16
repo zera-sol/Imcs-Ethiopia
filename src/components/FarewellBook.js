@@ -28,7 +28,11 @@ const FarewellBook = () => {
           ))}
         </select>
       </div>
-      {Object.entries(groupedByUniversity).map(([university, students]) => (
+      {/* Next to this part is going to downloaded as pdf by clicking the button save the pdf */}
+       {/* text Gradutates of a Given year */}
+      {selectedYear && <p className="farewell-title-p inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient gap-5"><FaGraduationCap className="text-1xl" /> Graduates of {selectedYear}</p>}
+      {groupedByUniversity ? 
+        Object.entries(groupedByUniversity).map(([university, students]) => (
         <div key={university} className="mb-8">
           <h2 className="text-2xl font-bold mb-4 border-b pb-2 farewell-title-h2 flex gap-5">
             <FaUniversity className="text-4xl" />{university}</h2>
@@ -61,7 +65,11 @@ const FarewellBook = () => {
             ))}
           </div>
         </div>
-      ))}
+      )):
+         <div className="text-white">
+            There are no Graduates in {selectedYear}
+         </div>
+    }
     </div>
   );
 };
