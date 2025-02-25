@@ -12,6 +12,7 @@ import EditBlog from './components/EditBlog';
 import Login from './components/Login';
 import AddNews from './components/createNews'
 import AddGraduates from ".//pages/AddGraduates"
+import EditGraduate from './components/EditGraduate';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" element={<Login />}  />   
           <Route path="/add-news" element={<AddNews />} />
           <Route path="/add-graduates" element={<AddGraduates />} />
+          <Route path="/edit-graduate/:id" element={<EditGraduate />} />
         </Routes>
         <Footer />  {/* Footer will be displayed on all pages */}
       </Router>

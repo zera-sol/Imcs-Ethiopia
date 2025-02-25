@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Upload } from "lucide-react";
+import { FaSpinner } from "react-icons/fa";
 import "./adminGraduateForm.css"
+import api from "../api"
 
 const AdminGraduateForm = () => {
   const navigate = useNavigate();
   const [year, setYear] = useState(""); // Keeps the same year for all universities
   const [universities, setUniversities] = useState([]); 
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+  const [loading, setLoading] = useState(false);
 
   // Check if user is logged in when component mounts
   useEffect(() => {
@@ -48,19 +50,7 @@ const AdminGraduateForm = () => {
     const updatedUniversities = [...universities];
     updatedUniversities[uniIndex].students[stuIndex][field] = value;
     setUniversities(updatedUniversities);
-  };
-
-  const handleImageChange = (uniIndex, stuIndex, file) => {
-    const updatedUniversities = [...universities];
-    const reader = new FileReader();
-    
-    reader.onloadend = () => {
-      updatedUniversities[uniIndex].students[stuIndex].image = reader.result; // Show preview
-      setUniversities(updatedUniversities);
-    };
-
-    reader.readAsDataURL(file);
-  };
+  }
 
   const handleSubmit = async () => {
     const studentsArray = universities.flatMap((uni) =>
@@ -68,23 +58,27 @@ const AdminGraduateForm = () => {
         ...student,
         university: uni.university,
         year: year,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeCEI3KrEBo7UfpS_ulmOvcGNxta2ErpP02NXq6MoG5iRDcm9mf6CycIE7osCB06ANdcU&usqp=CAU"
       }))
     );
 
     try {
-      const response = await fetch("http://your-api-url.com/api/graduates", {
+      setLoading(true)
+      const response = await fetch(`${api}/graduates`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(studentsArray),
+        body: JSON.stringify({ graduates: studentsArray }),
       });
-
-      if (!response.ok) throw new Error("Failed to submit");
+      const resData = await response.json();
+      if (!response.ok) throw new Error(resData.message);
 
       alert("Graduates added successfully!");
-      navigate("/graduates");
+      navigate("/farewell-book");
     } catch (error) {
       console.error(error);
-      alert("Error submitting data");
+      alert(error);
+    } finally{
+      setLoading(false)
     }
   };
 
@@ -154,23 +148,6 @@ const AdminGraduateForm = () => {
                         placeholder="Last Words"
                     ></textarea>
               </div>
-
-              {/* Image Upload & Preview */}
-              <div className="mt-2">
-                {student.image && (
-                    <img src={student.image} alt="Preview" className="h-20 w-20 object-cover rounded" />
-                )}
-                <label className="mt-2 cursor-pointer flex items-center space-x-2">
-                    <Upload className="h-6 w-6 text-gray-500 hover:text-gray-700" />
-                    <input
-                    type="file"
-                    accept="image/*"
-                    onChange={(e) => handleImageChange(uniIndex, stuIndex, e.target.files[0])}
-                    className="hidden" // Hide the default file input
-                    />
-                    image
-                </label>
-              </div>
             </div>
           ))}
 
@@ -191,12 +168,13 @@ const AdminGraduateForm = () => {
         + Add University
       </button>
 
-      <button
-        onClick={handleSubmit}
-        className="mt-4 p-2 bg-green-600 text-white rounded w-full"
-      >
-        Submit All Graduates
-      </button>
+     {loading ? (<FaSpinner className="animate-spin text-blue-500 text-4xl flex justfy-center items-centr m-5" />):
+        <button
+          onClick={handleSubmit}
+          className="mt-4 p-2 bg-green-600 text-white rounded w-full block"
+        >
+          Submit All Graduates
+        </button>}
     </div>
   );
 };

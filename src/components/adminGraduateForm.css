@@ -3,7 +3,7 @@
 }
 .adminGraduate-container input,
 .adminGraduate-container textarea{
-    border-bottom: 2px solid var(--blueimcs);
+    border-bottom: 2px solid black;
     color: var(--blueimcs);
     font-size: 1.05rem;
 }
@@ -20,9 +20,11 @@
     justify-content: space-between;
     gap: 25px;
 }
-.adminGraduate-container .university{
-    border: 1px dashed var(--blueimcs);
+.university{
+    border: 1px dashed purple;
+    margin-bottom: 15px;
 }
+
 /* adminGraduateForm.css */
 
 /* Default styling for larger screens (assuming your design works well on larger screens) */
@@ -55,6 +57,9 @@ button {
   }
   .cridential-field{
     flex-direction: column;
-    gap: 5px;
+    gap: 0px;
+  }
+  .university{
+    margin-bottom: 15px;
   }
 }
