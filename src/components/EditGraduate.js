@@ -57,7 +57,7 @@ const EditGraduate = () => {
       }
 
       alert("Graduate information updated successfully!");
-      navigate("/graduats");
+      navigate("/farewell-book");
     } catch (error) {
       console.error("Error updating graduate information:", error);
       alert("Failed to update graduate information.");
@@ -154,7 +154,7 @@ const EditGraduate = () => {
             onClick={handleSave}
             className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
           >
-            {isLoading ? (<FaSpinner className="animate-spin text-white-500 text-4xl flex justfy-center items-centr" />)  : "Save Changes"}
+            {isLoading ? (<FaSpinner className="animate-spin text-white-500 text-4xl w-1/2 mx-auto"/>)  : "Save Changes"}
           </button>
         </div>
       </div>

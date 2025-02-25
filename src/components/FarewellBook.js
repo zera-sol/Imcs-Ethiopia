@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { FaUniversity, FaGraduationCap, FaPhone, FaEdit, FaTrash, FaSpinner} from "react-icons/fa";
+import { FaUniversity, FaGraduationCap, FaPhone, FaEdit, FaTrash, FaSpinner, FaUserGraduate} from "react-icons/fa";
 import './FarewellBook.css';
 import api from "../api";
 
@@ -61,17 +61,24 @@ const FarewellBook = () => {
 
   return (
     <div className="p-5 max-w-10xl mx-auto bg-[#3992CE]">
-      <h1 className="text-4xl font-bold text-center farewell-title">Farewell Book</h1>
-      <div className="flex justify-center">
-        <select
-          className="border px-8 py-2 rounded-lg shadow-md farewell-select border-white text-10xl font-bold"
-          value={selectedYear}
-          onChange={(e) => setSelectedYear(Number(e.target.value))}
-        >
-          {[...new Set(graduates.map(g => g.year))].sort().map(year => (
-            <option key={year} value={year}>{year}</option>
-          ))}
-        </select>
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-50 gap-5">
+          <button
+              className="text-2xl font-bold text-center flex justify-center items-center gap-5 farewell-title px-2 py-2 text-white border-2 hover:border-white-700 rounded-lg hover:bg-blue-600 transition duration-300"
+              onClick={() => navigate("/add-graduates")}
+              >
+              <FaUserGraduate /> Add Graduate
+          </button>
+          <div >
+            <select
+              className="border px-8 py-2 rounded-lg shadow-md farewell-select border-white text-10xl font-bold"
+              value={selectedYear}
+              onChange={(e) => setSelectedYear(Number(e.target.value))}
+            >
+              {[...new Set(graduates.map(g => g.year))].sort().map(year => (
+                <option key={year} value={year}>{year}</option>
+              ))}
+            </select>
+          </div>
       </div>
 
       {loading && <p className="text-center text-white">Loading...</p>}

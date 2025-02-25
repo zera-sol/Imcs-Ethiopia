@@ -49,7 +49,7 @@ const Navbar = () => {
             <li><a href="/" className="text-gray-600 transition duration-300">Home</a></li>
             <li><a href="/about" className="text-gray-600 transition duration-300">About</a></li>
             <li><a href="/news" className="text-gray-600 transition duration-300">News</a></li>
-            <li><a href="/farewell-book" className="text-gray-600 transition duration-300">Farewell Book</a></li>
+            <li><a href="/farewell-book" className="text-gray-600 transition duration-300">Graduates</a></li>
             <li><a href="/contact" className="text-gray-600 transition duration-300">Contact Us</a></li>
 
             {!isLoggedIn ? (
@@ -76,7 +76,7 @@ const Navbar = () => {
             <li><a href="/" className="block text-gray-600 transition duration-300">Home</a></li>
             <li><a href="/about" className="block text-gray-600 transition duration-300">About</a></li>
             <li><a href="/news" className="block text-gray-600 transition duration-300">news</a></li>
-            <li><a href="/farewell-book" className="block text-gray-600 transition duration-300">Farewell Book</a></li>
+            <li><a href="/farewell-book" className="block text-gray-600 transition duration-300">Graduates</a></li>
             <li><a href="/contact" className="block text-gray-600 transition duration-300">Contact Us</a></li>
 
             {!isLoggedIn ? (

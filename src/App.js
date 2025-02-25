@@ -13,6 +13,7 @@ import Login from './components/Login';
 import AddNews from './components/createNews'
 import AddGraduates from ".//pages/AddGraduates"
 import EditGraduate from './components/EditGraduate';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/add-news" element={<AddNews />} />
           <Route path="/add-graduates" element={<AddGraduates />} />
           <Route path="/edit-graduate/:id" element={<EditGraduate />} />
+          <Route path="*" element={<NotFound />} /> 
         </Routes>
         <Footer />  {/* Footer will be displayed on all pages */}
       </Router>

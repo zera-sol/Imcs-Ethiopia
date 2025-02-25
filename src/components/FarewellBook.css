@@ -1,12 +1,7 @@
 /* Updated CSS with RGB colors */
 .farewell-title {
-    color: rgb(255, 255, 255); /* White */
-    text-align: center;
+    color: rgb(255, 255, 255); 
     font-family: "Smooch Sans", serif;
-    font-weight: bold;
-    margin: 50px;
-    font-size: 2rem;
-    margin-top: 0;
 }
 
 .farewell-title-h2 {
