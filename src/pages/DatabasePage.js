@@ -137,58 +137,58 @@ const DatabasePage = () => {
         )}
       </div>
 
-      {/* Table */}
-      <div className="overflow-x-auto mt-4">
-        <table className="min-w-full border-collapse border border-gray-400">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border p-2">#</th>
-              <th className="border p-2">Actions</th>
-              <th className="border p-2 w-56">Full Name</th>
-              <th className="border p-2 w-28">Institution</th>
-              <th className="border p-2 w-40">Department</th>
-              <th className="border p-2">Year of Graduation</th>
-              <th className="border p-2">Sex</th>
-              <th className="border p-2">Phone</th>
-              <th className="border p-2">Vicariate</th>
-              <th className="border p-2 w-56">Email</th>
-            </tr>
-          </thead>
-          <tbody onPaste={handlePaste}>
-            {data.map((row, index) => (
-              <tr key={index} className="text-center">
-                <td className="border p-2">{index + 1}</td> {/* Row Number */}
-                <td className="p-2 border-t  flex gap-2 justify-center">
-                  {editingRow === index ? (
-                    <button onClick={() => setEditingRow(null)} className="text-green-500">✅</button>
-                  ) : (
-                    <FaEdit className="text-blue-500 cursor-pointer" onClick={() => setEditingRow(index)} />
-                  )}
-                  <FaTrash className="text-red-500 cursor-pointer" onClick={() => handleDeleteRow(index)} />
-                </td>
-                {Object.keys(row).map((field, i) => (
-                  field !== "university" ? (
-                    <td key={i} className="border p-2">
-                      {editingRow === index ? (
-                        <input
-                          type="text"
-                          value={row[field]}
-                          onChange={(e) => handleInputChange(index, field, e.target.value)}
-                          className="w-full p-1"
-                        />
-                      ) : (
-                        row[field]
-                      )}
-                    </td>
-                  ) : (
-                    <td key={i} className="border p-2">{university}</td> 
-                  )
-                ))}
+     {/* Table */}
+        <div className="overflow-x-auto mt-4">
+          <table className="min-w-full border-collapse border border-gray-400">
+            <thead>
+              <tr className="bg-gray-200">
+                <th className="border p-3 min-w-[50px]">#</th>
+                <th className="border p-3 min-w-[100px]">Actions</th>
+                <th className="border p-3 min-w-[200px]">Full-Name</th>
+                <th className="border p-3 min-w-[150px]">Institution</th>
+                <th className="border p-3 min-w-[200px]">Department/field</th>
+                <th className="border p-3 min-w-[180px]">Year-of-Graduation</th>
+                <th className="border p-3 min-w-[100px]">Sex</th>
+                <th className="border p-3 min-w-[180px]">Phone-number</th>
+                <th className="border p-3 min-w-[180px]">Vicariate</th>
+                <th className="border p-3 min-w-[250px]">Email</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody onPaste={handlePaste}>
+              {data.map((row, index) => (
+                <tr key={index} className="text-center">
+                  <td className="border p-3 min-w-[50px]">{index + 1}</td> {/* Row Number */}
+                  <td className="p-3 border-t flex gap-2 justify-center min-w-[30px]">
+                    {editingRow === index ? (
+                      <button onClick={() => setEditingRow(null)} className="text-green-500">✅</button>
+                    ) : (
+                      <FaEdit className="text-blue-500 cursor-pointer" onClick={() => setEditingRow(index)} />
+                    )}
+                    <FaTrash className="text-red-500 cursor-pointer" onClick={() => handleDeleteRow(index)} />
+                  </td>
+                  {Object.keys(row).map((field, i) => (
+                    field !== "university" ? (
+                      <td key={i} className="border p-3 min-w-[150px]">
+                        {editingRow === index ? (
+                          <input
+                            type="text"
+                            value={row[field]}
+                            onChange={(e) => handleInputChange(index, field, e.target.value)}
+                            className="w-full p-1"
+                          />
+                        ) : (
+                          row[field]
+                        )}
+                      </td>
+                    ) : (
+                      <td key={i} className="border p-3 min-w-[200px]">{university}</td> 
+                    )
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
       {/* Add Row Button */}
       <button onClick={handleAddRow} className="mt-4 bg-blue-500 text-white p-2 rounded">
