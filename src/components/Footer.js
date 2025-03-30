@@ -12,7 +12,7 @@ const Footer = () => {
 
       {/* Footer content */}
       <div className="container mx-auto px-8 lg:px-16 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* First column - Logo */}
           <div className="flex justify-center md:justify-center">
             <img
@@ -21,13 +21,13 @@ const Footer = () => {
               className="h-12"
             />
           </div>
-
+          
           {/* Second column - Useful Links */}
           <div>
             <h3 className="text-lg font-bold mb-4" style={{ color: '#3992CE' }}>
               Useful Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 grid-cols-2 gap-8">
               <li>
                 <a href="/" className="text-gray-700 hover:text-gray-900">
                   Home
@@ -44,7 +44,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/blog" className="text-gray-700 hover:text-gray-900">
+                <a href="/news" className="text-gray-700 hover:text-gray-900">
                   Blog/News
                 </a>
               </li>
@@ -61,46 +61,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Third column - IMCS in different continents */}
-          <div>
-            <h3 className="text-lg font-bold mb-4" style={{ color: '#3992CE' }}>
-              IMCS in Different Continents
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-700 hover:text-gray-900">
-                  IMCS-MIEC Pax Romana Africa
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:text-gray-900">
-                  IMCS Pax Romana Asian Pacific
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:text-gray-900">
-                  IMCS Pax Romana North America
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:text-gray-900">
-                  MIEC-JECI Latin America
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:text-gray-900">
-                  JECI-MIEC Europe
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-700 hover:text-gray-900">
-                  IMCS Pax Romana Middle East
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Fourth column - Get in Touch */}
+          {/* Third column - Get in Touch */}
           <div>
             <h3 className="text-lg font-bold mb-4" style={{ color: '#3992CE' }}>
               Get in Touch
@@ -132,7 +93,7 @@ const Footer = () => {
             </a>
             {/* Address */}
             <p className="text-gray-700">
-              123 Main Street, City, Country
+              In all over the Country, Ethiopia
             </p>
           </div>
         </div>

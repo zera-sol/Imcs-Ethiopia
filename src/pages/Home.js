@@ -12,12 +12,12 @@ function Home() {
   return (
     <div>
       <HeroSection />
+      <RecentBlog />
       <AboutUs />
       <StatsBoxes />
       <History />
       <Annual />
       <Leadership />
-      <RecentBlog />
       <PopeLetter />
       <TestimonySection />
       {/* Other components */}

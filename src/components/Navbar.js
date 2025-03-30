@@ -11,6 +11,7 @@ const Navbar = () => {
     const user = localStorage.getItem("user"); // Assume user data is stored in localStorage
     if (user) {
       setIsLoggedIn(true);
+      console.log(user)
     }
   }, []);
 
@@ -50,7 +51,8 @@ const Navbar = () => {
             <li><a href="/about" className="text-gray-600 transition duration-300">About</a></li>
             <li><a href="/news" className="text-gray-600 transition duration-300">News</a></li>
             <li><a href="/farewell-book" className="text-gray-600 transition duration-300">Graduates</a></li>
-            <li><a href="/contact" className="text-gray-600 transition duration-300">Contact Us</a></li>
+            <li><a href="/contact" className="text-gray-600 transition duration-300">Contact</a></li>
+            <li><a href="/database" className="text-gray-600 transition duration-300">Database</a></li>
 
             {!isLoggedIn ? (
               <li><a href="/login" className="text-gray-600 transition duration-300">Login</a></li>
@@ -77,7 +79,8 @@ const Navbar = () => {
             <li><a href="/about" className="block text-gray-600 transition duration-300">About</a></li>
             <li><a href="/news" className="block text-gray-600 transition duration-300">news</a></li>
             <li><a href="/farewell-book" className="block text-gray-600 transition duration-300">Graduates</a></li>
-            <li><a href="/contact" className="block text-gray-600 transition duration-300">Contact Us</a></li>
+            <li><a href="/contact" className="block text-gray-600 transition duration-300">Contact</a></li>
+            <li><a href="/database" className="block text-gray-600 transition duration-300">Database</a></li>
 
             {!isLoggedIn ? (
               <li><a href="/login" className="text-gray-600 transition duration-300">Login</a></li>
