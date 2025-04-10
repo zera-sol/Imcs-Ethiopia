@@ -20,7 +20,7 @@ const universitiesList = [
     "Arbaminch",
     "Meda Walabu",
     "Mizan / Tepi",
-    "Wachemo",
+    "Wachamo",
     "Durame",
     "Wolkite",
     "Semera",

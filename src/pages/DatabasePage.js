@@ -102,7 +102,7 @@ const DatabasePage = () => {
     }
     console.log({"Sent data": data})
     try {
-      await axios.post(`${api}/imcs-database`, { data });
+      await axios.post(`${api}/imcs-database`, { datafromUi: data });
       alert("Data saved successfully!");
     } catch (error) {
       console.error("Error saving data:", error);
