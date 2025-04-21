@@ -12,6 +12,7 @@ function Home() {
   return (
     <div>
       <HeroSection />
+      <TestimonySection />
       <RecentBlog />
       <AboutUs />
       <StatsBoxes />
@@ -19,7 +20,6 @@ function Home() {
       <Annual />
       <Leadership />
       <PopeLetter />
-      <TestimonySection />
       {/* Other components */}
     </div>
   );

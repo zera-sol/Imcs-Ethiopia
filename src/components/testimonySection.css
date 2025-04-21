@@ -1,19 +1,29 @@
-.testimony-container{
+.testimony-container {
     background-color: var(--blueimcs);
-}
+    max-width: 100%;
+  }
+  
 .testimony-container h1{
     color: white;
     text-align: center;
     font-family: "Smooch Sans", serif;
     font-weight: bold;
-    margin: 50px;
+    margin: 10px;
     font-size: 2rem;
 }
+.slick-slide > div{
+    margin: 0 10px;
+    box-sizing: border-box;
+}
 /* Screen width between 600px and 900px */
-@media (max-width: 600px){
+@media (max-width: 768px){
     .testimony-container h1{
         font-size: 1.5rem;
         margin: 15px;
+    }
+    .slick-slide > div{
+        margin: 0 20px;
+        padding: 10px;
     }
   }
   

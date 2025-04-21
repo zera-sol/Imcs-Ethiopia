@@ -4,6 +4,7 @@ import './navbar.css'
 import api from "../api";
 import axios from "axios";
 import "./blog.css";
+import { FaSpinner } from "react-icons/fa";
 
 // Mock Data (replace with data fetched from backend later)
 // const recentBlogs = [
@@ -33,16 +34,19 @@ import "./blog.css";
 const RecentBlog = () => {
   const [blogsToShow, setBlogsToShow] = useState(3);
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] =useState(false);
 
   // Fetch news from backend
   useEffect(() => {
     const fetchBlogs = async () => {
+      setLoading(true)
       try {
         const response = await axios.get(`${api}/news`);
         setBlogs(response.data); // Assuming response.data is an array of news
       } catch (error) {
         console.error("Error fetching blogs:", error);
       }
+      setLoading(false)
     };
     fetchBlogs();
   }, []);
@@ -58,7 +62,7 @@ const RecentBlog = () => {
   }, [inView]);
 
   return (
-    <div ref={ref} className="min-h-screen bg-[#3992CE] py-16 px-6 md:px-20 blog-container-comp">
+    <div ref={ref} className="bg-[#3992CE] py-16 px-6 md:my-20 md:px-20 blog-container-comp">
       {/* Title Section */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
@@ -68,35 +72,38 @@ const RecentBlog = () => {
       >
         Our Recent Blog & News
       </motion.h2>
-
+      
       {/* Blog Grid */}
-      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-        {blogs.slice(0, blogsToShow).map((blog, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: index * 0.2 }}
-            className="relative group bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105"
-          >
-            {/* Blog Image */}
-            <img
-              src={blog.image}
-              alt={blog.title}
-              className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110"
-            />
+      {loading? (<FaSpinner className="animate-spin text-white text-[100px] flex justify-center items-center mx-auto my-10" />):
+            <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+                {blogs.slice(0, blogsToShow).map((blog, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: index * 0.2 }}
+                    className="relative group bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105"
+                  >
+                    {/* Blog Image */}
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110"
+                    />
 
-            {/* Blog Content */}
-            <div className="p-4 text-container-recent-blog">
-              <h3 className="text-xl font-semibold text-blue-900 group-hover:text-[#3992CE] transition-all duration-500 group-hover:underline">
-                {blog.title}
-              </h3>
-              <p className="text-xs text-gray-400 mt-2">Date: {blog.date}</p>
-              <p className="text-sm text-gray-600 mt-2">{blog.content}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+                    {/* Blog Content */}
+                    <a href={`blog${blog._id}`}>
+                      <div className="p-4 text-container-recent-blog">
+                        <h3 className="text-xl font-semibold text-blue-900 group-hover:text-[#3992CE] transition-all duration-500 group-hover:underline">
+                          {blog.title}
+                        </h3>
+                        <p className="text-xs text-gray-400 mt-2">Date: {blog.date}</p>
+                        <p className="text-sm text-gray-600 mt-2">{blog.content}</p>
+                    </div>
+                    </a>
+                  </motion.div>
+                ))}
+          </div>}
 
       {/* Read More Button */}
       <div className="mt-12 text-center">

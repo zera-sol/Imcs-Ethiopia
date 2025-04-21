@@ -5,6 +5,7 @@
 .navbar-logo img{
     max-width:100px;
 }
+/* There are some errors in .list-containere class to be edited in the future */
 .list-container ul {
     margin-right: 65px;
 }
@@ -19,7 +20,9 @@
 .list-container ul li a:hover{
     color: var(--blueimcs);
 }
-
+.blog-container-comp{
+    margin-top: -30px;
+}
 /* Screen width between 600px and 900px */
 @media (max-width: 600px){
     .navbar-logo{
@@ -28,9 +31,6 @@
     }
     .navbar-logo img{
         max-width:50px;
-    }
-    .blog-container-comp{
-        margin-top: -180px;
     }
   }
   

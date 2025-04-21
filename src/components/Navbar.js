@@ -36,7 +36,7 @@ const Navbar = () => {
                 <a href="/terms-conditions" className="text-white no-underline hover:underline">Privacy Policy</a>
             </p>
      </div>
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <div className="flex justify-between items-center py-4 list-container">
           {/* Logo */}
           <div className="navbar-logo">
@@ -46,7 +46,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu Items */}
-          <ul className="hidden md:flex space-x-6">
+          <ul className="hidden md:flex space-x-2">
             <li><a href="/" className="text-gray-600 transition duration-300">Home</a></li>
             <li><a href="/about" className="text-gray-600 transition duration-300">About</a></li>
             <li><a href="/news" className="text-gray-600 transition duration-300">News</a></li>
