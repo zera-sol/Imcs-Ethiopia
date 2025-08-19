@@ -15,7 +15,8 @@ import AddGraduates from ".//pages/AddGraduates"
 import EditGraduate from './components/EditGraduate';
 import NotFound from './pages/NotFound';
 import DatabasePage from './pages/DatabasePage';
-
+import BlogsGrid from './pages/BlogsGrid';
+import BlogDetail from './pages/BlogDetail';
 function App() {
   return (
     <div className="App">
@@ -33,6 +34,8 @@ function App() {
           <Route path="/add-news" element={<AddNews />} />
           <Route path="/add-graduates" element={<AddGraduates />} />
           <Route path="/edit-graduate/:id" element={<EditGraduate />} />
+          <Route path="/blogsGrid" element={<BlogsGrid />}  /> 
+          <Route path="/blog/:id" element={<BlogDetail />}  /> 
           <Route path="/database" element={<DatabasePage />} />
           <Route path="*" element={<NotFound />} /> 
         </Routes>

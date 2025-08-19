@@ -35,5 +35,5 @@
 }
 .text-container-recent-blog{
   height: 300px;
-  overflow: scroll;
+  overflow: hidden;
 }

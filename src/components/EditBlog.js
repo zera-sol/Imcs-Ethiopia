@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import { FaCamera } from "react-icons/fa"; // Importing the camera icon
 import "./editBlog.css";
 import api from "../api"
