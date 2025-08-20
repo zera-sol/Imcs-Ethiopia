@@ -75,6 +75,9 @@ const GraduatesSlider = () => {
               className="w-24 h-24 rounded-full mx-auto border-4 border-[#3992CE]"
             />
             <h3 className="text-lg font-bold mt-2">{student.name}</h3>
+            <p className="text-sm text-gray-600 flex items-center justify-center gap-2">
+              <FaGraduationCap /> {student.year}
+            </p>
             <p className="text-sm text-gray-500 flex items-center justify-center gap-2">
               <FaUniversity /> {student.university}
             </p>
