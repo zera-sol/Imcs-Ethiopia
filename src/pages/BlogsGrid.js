@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
 import api from "../api";
-import { FaSpinner } from "react-icons/fa";
+import { FaSpinner, FaPlus } from "react-icons/fa";
 import '../components/blog.css'
 
 const BlogsGrid = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const navigate = useNavigate();
+  const user = localStorage.getItem("user");
 
   const blogsPerPage = 30;
 
@@ -32,6 +35,10 @@ const BlogsGrid = () => {
   const startIndex = (currentPage - 1) * blogsPerPage;
   const currentBlogs = blogs.slice(startIndex, startIndex + blogsPerPage);
 
+  const createNews = () => {
+    navigate("/add-news");
+   }
+
   return (
     <div className="bg-[#3992CE] py-5 px-3 ">
       {/* Title */}
@@ -43,7 +50,8 @@ const BlogsGrid = () => {
       >
         All Blogs & News
       </motion.h2>
-
+         {user && <button onClick={createNews} className="create-news">
+                             <FaPlus /> Creat News</button>}
       {/* Blog Grid */}
       {loading ? (
         <FaSpinner className="animate-spin text-white text-[100px] flex justify-center items-center mx-auto my-10" />
@@ -66,13 +74,13 @@ const BlogsGrid = () => {
 
               {/* Blog Content */}
               <a href={`blog/${blog._id}`}>
-                <div className="p-4 text-container-recent-blog">
-                  <h3 className="text-xl font-semibold text-blue-900 group-hover:text-[#3992CE] transition-all duration-500 group-hover:underline">
-                    {blog.title}
-                  </h3>
-                  <p className="text-xs text-gray-400 mt-2">Date: {blog.date}</p>
-                  <p className="text-sm text-gray-600 mt-2">{blog.content}</p>
-                </div>
+                  <div className="p-4 text-container-recent-blog">
+                    <h3 className="text-xl font-semibold text-blue-900 group-hover:text-[#3992CE] transition-all duration-500 group-hover:underline">
+                      {blog.title}
+                    </h3>
+                    <p className="text-xs text-gray-400 mt-2">Date: {blog.date}</p>
+                    <p className="text-sm text-gray-600 mt-2">{blog.content}</p>
+                  </div>
                 </a>
             </motion.div>
           ))}

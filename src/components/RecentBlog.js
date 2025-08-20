@@ -60,7 +60,6 @@ const RecentBlog = () => {
 
               {/* Blog Content */}
               <a href={`blog/${blog._id}`}>
-                 {console.log('Geletu -> ', typeof(blog._id))}
                 <div className="p-4 text-container-recent-blog">
                   <h3 className="text-xl font-semibold text-blue-900 group-hover:text-[#3992CE] transition-all duration-500 group-hover:underline">
                     {blog.title}
