@@ -8,10 +8,12 @@ import Leadership from "../components/Leadership";
 import RecentBlog from "../components/RecentBlog";
 import PopeLetter from "../components/PopeLetter";
 import TestimonySection from "../components/TestimonySection";
+import GraduatesSlider from "../components/GraduatesSlider";
 function Home() {
   return (
     <div>
       <HeroSection />
+      <GraduatesSlider />
       <TestimonySection />
       <RecentBlog />
       <AboutUs />
