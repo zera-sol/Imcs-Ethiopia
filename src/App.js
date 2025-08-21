@@ -17,6 +17,7 @@ import NotFound from './pages/NotFound';
 import DatabasePage from './pages/DatabasePage';
 import BlogsGrid from './pages/BlogsGrid';
 import BlogDetail from './pages/BlogDetail';
+import StudentsPage from './pages/StudentsPage';
 function App() {
   return (
     <div className="App">
@@ -32,6 +33,7 @@ function App() {
           <Route path="/edit-news/:id" element={<EditBlog />} />      
           <Route path="/login" element={<Login />}  />   
           <Route path="/add-news" element={<AddNews />} />
+          <Route path="/students" element={<StudentsPage />} />
           <Route path="/add-graduates" element={<AddGraduates />} />
           <Route path="/edit-graduate/:id" element={<EditGraduate />} />
           <Route path="/blogsGrid" element={<BlogsGrid />}  /> 

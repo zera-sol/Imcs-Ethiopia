@@ -3,6 +3,7 @@ import axios from "axios";
 import { FaTrash, FaEdit, FaSpinner } from "react-icons/fa";
 import api from "../api"
 import universitiesList from "../data/universityList";
+import { useNavigate } from "react-router-dom";
 
 const DatabasePage = () => {
   const [university, setUniversity] = useState(""); // Selected university
@@ -10,6 +11,8 @@ const DatabasePage = () => {
   const [data, setData] = useState([]); // Table data
   const [editingRow, setEditingRow] = useState(null); // Track editing\
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   // Live search for university selection
   const handleUniversitySearch = (e) => {
@@ -30,22 +33,22 @@ const DatabasePage = () => {
   const handleSelectUniversity = (uni) => {
     setUniversity(uni);
     setFilteredUniversities([]);
-    fetchUniversityData(uni);
+    // fetchUniversityData(uni);
   };
 
   // Fetch data from Google Sheets when university is selected
-  const fetchUniversityData = async (selectedUniversity) => {
-    try {
-      setLoading(true)
-      const response = await axios.get(`${api}/imcs-database/getUniversityData?university=${selectedUniversity}`);
-      setData(response.data); // Load existing students
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      setLoading(false)
-      alert("Failed to fetch university data.");
-    }
-    setLoading(false)
-  };
+  // const fetchUniversityData = async (selectedUniversity) => {
+  //   try {
+  //     setLoading(true)
+  //     const response = await axios.get(`${api}/imcs-database/students?university=${selectedUniversity}`);
+  //     setData(response.data); // Load existing students
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //     setLoading(false)
+  //     alert("Failed to fetch university data.");
+  //   }
+  //   setLoading(false)
+  // };
 
   // Add a new row
   const handleAddRow = () => {
@@ -94,16 +97,11 @@ const DatabasePage = () => {
 
   // Save data to Google Sheets
   const handleSave = async () => {
-    const phoneNumbers = data.map((d) => d.phone);
     setLoading(true)
-    if (new Set(phoneNumbers).size !== phoneNumbers.length) {
-      alert("Duplicate phone numbers found!");
-      return;
-    }
-    console.log({"Sent data": data})
     try {
-      await axios.post(`${api}/imcs-database`, { datafromUi: data });
+      await axios.post(`${api}/imcs-database/students`, { datafromUi: data });
       alert("Data saved successfully!");
+      navigate("/students");
     } catch (error) {
       console.error("Error saving data:", error);
       alert("Failed to save data.");
@@ -206,3 +204,4 @@ const DatabasePage = () => {
 };
 
 export default DatabasePage;
+                                        

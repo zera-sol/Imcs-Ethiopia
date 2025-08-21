@@ -52,7 +52,7 @@ const Navbar = () => {
             <li><a href="/blogsGrid" className="text-gray-600 transition duration-300">News/blog</a></li>
             <li><a href="/farewell-book" className="text-gray-600 transition duration-300">Graduates</a></li>
             <li><a href="/contact" className="text-gray-600 transition duration-300">Contact</a></li>
-            <li><a href="/database" className="text-gray-600 transition duration-300">Database</a></li>
+            <li><a href="/students" className="text-gray-600 transition duration-300">Database</a></li>
 
             {!isLoggedIn ? (
               <li><a href="/login" className="text-gray-600 transition duration-300">Login</a></li>
@@ -80,7 +80,7 @@ const Navbar = () => {
             <li><a href="/blogsGrid" className="block text-gray-600 transition duration-300">news/blog</a></li>
             <li><a href="/farewell-book" className="block text-gray-600 transition duration-300">Graduates</a></li>
             <li><a href="/contact" className="block text-gray-600 transition duration-300">Contact</a></li>
-            <li><a href="/database" className="block text-gray-600 transition duration-300">Database</a></li>
+            <li><a href="/students" className="block text-gray-600 transition duration-300">Database</a></li>
 
             {!isLoggedIn ? (
               <li><a href="/login" className="text-gray-600 transition duration-300">Login</a></li>
